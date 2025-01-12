@@ -1,0 +1,292 @@
+/* Global styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Ensure the body takes the full height of the viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styling */ 
+.header { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    background-color: #6b0000; 
+    color: white; 
+    padding: 0.5vh 2.5vw; 
+    height: 50px; 
+    position: fixed; /* Fix the header to the top */
+    width: 100%; /* Full width of the viewport */
+    top: 0; /* Position it at the top */
+    z-index: 1000; /* Ensure it stays on top of other elements */
+    box-sizing: border-box;
+}
+.header img { 
+    width: 3.8em; 
+} 
+.logo-section { 
+    flex: 0 0 auto; 
+    margin-right: 10px; 
+} 
+.logo { 
+    width: 3.8em; 
+    height: auto; 
+} 
+.text-section { 
+    flex: 1 1 auto; 
+    text-align: left; 
+    line-height: 1; 
+    font-weight: bold; 
+} 
+.university-name { 
+    font-size: 0.8em; 
+    margin: 0; 
+    font-weight: bold; 
+} 
+.sub-text { 
+    font-size: 1em; 
+    margin: 0; 
+    font-weight: bold;
+}
+
+.menu-section { 
+    display: flex; 
+    gap: 15px; 
+    align-self: stretch; 
+    margin-right: auto; 
+} 
+.menu-option { 
+    text-decoration: none; 
+    color: white; 
+    padding: 0 10px; 
+    display: flex; 
+    align-items: center;
+    position: relative; /* Add position: relative */
+}
+
+.menu-option::after {
+    content: '';
+    width: 100%; 
+    height: 2px; 
+    background-color: red;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.menu-option:hover::after {
+    transform: scaleX(1);
+}
+
+.menu-option:hover {
+    background-color: transparent;
+    color: white;
+}
+
+@media (max-width: 800px) {
+    .menu-section {
+        display: none;
+    }
+}
+
+.search-section {
+    width: 3%;
+    margin-left: 10%;
+    margin-right: -2%;
+    height: 110%;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10px;
+}
+
+.search-button img {
+    width: 1em;
+    height: auto;
+}
+
+.container {
+    display: flex;
+    flex: 1; /* Make the container take up the remaining height */
+    justify-content: space-between;
+    padding-top: 50px; /* Add padding to account for the fixed header */
+}
+
+.left-div {
+    flex: 0 0 30%;
+    padding: 10px;
+    background-color: #f0f0f0; /* Light grey background */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 50px; /* Add margin to avoid being under the fixed header */
+    height: calc(100% - 50px); /* Adjust height to fit below the header */
+}
+
+.right-div {
+    flex: 1;
+    padding: 10px;
+    margin-left: 450px; /* Make room for the fixed div */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin-top: 50px; /* Add margin to avoid being under the fixed header */
+}
+
+.search-bar {
+    display: flex;
+    align-items: center; /* Center vertically */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow under the search bar */
+    margin-bottom: 10px; /* Add margin to bring it down */
+    position: relative;
+}
+
+.search-input {
+    padding: 10px;
+    font-size: 1em;
+    border: none; /* Borderless */
+    border-radius: 4px;
+    width: 100%; /* Full width of the search bar */
+}
+
+.search-icon-left {
+    position: absolute;
+    right: 10px; /* Adjust position as needed */
+    width: 1em;
+    height: auto;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.red-text {
+    color: red;
+}
+
+/* Right div content styling */
+.right-div img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.right-div p, .right-div h3 {
+    margin: 10px 0;
+}
+
+.right-div a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.right-div a:hover {
+    text-decoration: underline; /* Optional: Add underline on hover if desired */
+}
+
+.more-photos {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.photo {
+    width: 48%;
+}
+
+.photo img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.photo a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    font-size: 0.9em;
+}
+
+.photo a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styling */
+.footer-left, .footer {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px; 
+}
+
+.footer-left {
+    line-height: 0.4;
+    margin-top: auto; /* Push footer to bottom */
+}
+
+.footer p {
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+.subscribe-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.subscribe-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: 2px solid white; 
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.subscribe-button:hover {
+    background-color: white;
+    color: rgba(149, 4, 4, 0.489);
+}
+
+@media (max-width: 800px) {
+    .left-div {
+        display: none;
+    }
+
+    .right-div {
+        flex: 1;
+    }
+}
+
+.social-media-links {
+    display: flex;
+    gap: 1px;
+}
+
+.social-media-links img {
+    display: flex;
+    width: 1.5em;
+    height: auto;
+}
+.rightheader {
+    width:max-content;
+    background-color: rgb(186, 181, 181);
+    box-sizing: border-box;
+}
